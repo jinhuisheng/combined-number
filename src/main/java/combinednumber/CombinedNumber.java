@@ -14,18 +14,18 @@ public class CombinedNumber {
 
     @Override
     public String toString() {
-        List<Integer> combinedNumberList = getCombinedList(list);
+        List<Integer> combinedNumberList = getCombinedNumberList(list);
         combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList.get(0).toString();
     }
 
-    private List<Integer> getCombinedList(List<Integer> list) {
-        if (list.size() <= 2) {
-            return getIntegers(list);
+    private List<Integer> getCombinedNumberList(List<Integer> list) {
+        if (list.size() < 3) {
+            return getCombinedNumberListLessThanThree(list);
         }
         List<Integer> combinedNumberList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            List<Integer> integers = getCombinedList(remove(i, list));
+            List<Integer> integers = getCombinedNumberList(remove(i, list));
             for (Integer integer : integers) {
                 combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
             }
@@ -39,7 +39,7 @@ public class CombinedNumber {
         return src;
     }
 
-    private List<Integer> getIntegers(List<Integer> list) {
+    private List<Integer> getCombinedNumberListLessThanThree(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
         combinedNumberList.add(combineNumber(list));
         Collections.reverse(list);
