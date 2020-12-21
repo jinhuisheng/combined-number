@@ -17,13 +17,11 @@ public class CombinedNumber {
             combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1) + "" + list.get(2)));
             combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(2) + "" + list.get(1)));
             combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
+            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(2) + "" + list.get(0)));
+            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + list.get(0) + "" + list.get(1)));
+            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + list.get(1) + "" + list.get(0)));
             combinedNumberList.sort((x, y) -> y - x);
-//            return combinedNumberList.get(0).toString();
-
-            return "321";
+            return combinedNumberList.get(0).toString();
         }
         if (list.size() == 2) {
             List<Integer> combinedNumberList = new ArrayList<>();
