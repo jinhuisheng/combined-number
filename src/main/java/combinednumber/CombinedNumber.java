@@ -29,10 +29,10 @@ public class CombinedNumber {
 
     private List<Integer> getCombinedNumberListGreaterThanTwo(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            List<Integer> integers = getCombinedNumberList(remove(i, list));
+        for (int index = 0; index < list.size(); index++) {
+            List<Integer> integers = getCombinedNumberList(remove(index, list));
             for (Integer integer : integers) {
-                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
+                combinedNumberList.add(Integer.parseInt(list.get(index) + "" + integer));
             }
         }
         return combinedNumberList;
