@@ -20,7 +20,7 @@ public class CombinedNumber {
     }
 
     private List<Integer> getCombinedList(List<Integer> list) {
-        if (list.size() < 3) {
+        if (list.size() <= 2) {
             return getIntegers(list);
         }
         List<Integer> combinedNumberList = new ArrayList<>();
