@@ -48,7 +48,6 @@ public class CombinedNumber {
         combinedNumberList.add(combineNumber(list));
         Collections.reverse(list);
         combinedNumberList.add(combineNumber(list));
-        combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList;
     }
 
