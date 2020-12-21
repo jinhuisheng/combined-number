@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class CombinedNumber {
     private List<Integer> list;
@@ -23,6 +24,10 @@ public class CombinedNumber {
         if (list.size() < 3) {
             return getCombinedNumberListLessThanThree(list);
         }
+        return getCombinedNumberListGreaterThanTwo(list);
+    }
+
+    private List<Integer> getCombinedNumberListGreaterThanTwo(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             List<Integer> integers = getCombinedNumberList(remove(i, list));
