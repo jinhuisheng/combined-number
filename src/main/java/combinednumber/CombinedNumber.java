@@ -40,7 +40,7 @@ public class CombinedNumber {
         List<Integer> combinedNumberList = new ArrayList<>();
         combinedNumberList.add(Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining(""))));
         Collections.reverse(list);
-        combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
+        combinedNumberList.add(Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining(""))));
         combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList;
     }
