@@ -12,4 +12,11 @@ public class CombinedNumberTest {
         CombinedNumber combinedNumber = new CombinedNumber(Arrays.asList(1));
         assertThat(combinedNumber.toString()).isEqualTo("1");
     }
+
+    @Test
+    void combine_list_with_two_item() {
+        CombinedNumber combinedNumber = new CombinedNumber(Arrays.asList(1, 2));
+        assertThat(combinedNumber.toString()).isEqualTo("21");
+    }
+
 }
