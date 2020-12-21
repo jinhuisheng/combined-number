@@ -14,8 +14,8 @@ public class CombinedNumber {
     public String toString() {
         if (list.size() == 2) {
             List<Integer> combinedNumberList = new ArrayList<>();
-            combinedNumberList.add(12);
-            combinedNumberList.add(21);
+            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
+            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0)));
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
         }
