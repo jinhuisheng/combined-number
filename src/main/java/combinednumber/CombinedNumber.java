@@ -24,9 +24,12 @@ public class CombinedNumber {
     }
 
     private List<Integer> getCombinedList(List<Integer> list) {
+        if (list.size() < 3) {
+            return getIntegers(list);
+        }
         List<Integer> combinedNumberList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            List<Integer> integers = getIntegers(remove(i));
+            List<Integer> integers = getCombinedList(remove(i));
             for (Integer integer : integers) {
                 combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
             }
