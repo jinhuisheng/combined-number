@@ -17,7 +17,7 @@ public class CombinedNumber {
             combinedNumberList.add(12);
             combinedNumberList.add(21);
             combinedNumberList.sort((x, y) -> y - x);
-            return list.get(1) + "" + list.get(0);
+            return combinedNumberList.get(0).toString();
         }
         return list.get(0).toString();
     }
