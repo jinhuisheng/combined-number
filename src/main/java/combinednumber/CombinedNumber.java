@@ -14,10 +14,6 @@ public class CombinedNumber {
 
     @Override
     public String toString() {
-        if (list.size() < 3) {
-            List<Integer> combinedNumberList = getIntegers(list);
-            return combinedNumberList.get(0).toString();
-        }
         List<Integer> combinedNumberList = getCombinedList(list);
         combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList.get(0).toString();
