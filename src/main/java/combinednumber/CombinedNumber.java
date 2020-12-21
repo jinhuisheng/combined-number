@@ -15,18 +15,23 @@ public class CombinedNumber {
     @Override
     public String toString() {
         if (list.size() == 3) {
-            List<Integer> combinedNumberList = new ArrayList<>();
-            for (int i = 0; i < list.size(); i++) {
-                List<Integer> integers = getIntegers(remove(i));
-                for (Integer integer : integers) {
-                    combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
-                }
-            }
+            List<Integer> combinedNumberList = getCombinedList(list);
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
         }
         List<Integer> combinedNumberList = getIntegers(list);
         return combinedNumberList.get(0).toString();
+    }
+
+    private List<Integer> getCombinedList(List<Integer> list) {
+        List<Integer> combinedNumberList = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            List<Integer> integers = getIntegers(remove(i));
+            for (Integer integer : integers) {
+                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
+            }
+        }
+        return combinedNumberList;
     }
 
     private List<Integer> remove(int index) {
