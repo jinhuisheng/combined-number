@@ -14,6 +14,9 @@ public class CombinedNumber {
     public String toString() {
         if (list.size() == 2) {
             List<Integer> combinedNumberList = new ArrayList<>();
+            combinedNumberList.add(12);
+            combinedNumberList.add(21);
+            combinedNumberList.sort((x, y) -> y - x);
             return list.get(1) + "" + list.get(0);
         }
         return list.get(0).toString();
