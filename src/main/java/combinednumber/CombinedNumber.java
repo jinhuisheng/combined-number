@@ -14,12 +14,10 @@ public class CombinedNumber {
     public String toString() {
         if (list.size() == 3) {
             List<Integer> combinedNumberList = new ArrayList<>();
-            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(remove(0)).get(0)));
-            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(remove(0)).get(1)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + getIntegers(remove(1)).get(0)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + getIntegers(remove(1)).get(1)));
-            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + getIntegers(remove(2)).get(0)));
-            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + getIntegers(remove(2)).get(1)));
+            for (int i = 0; i < list.size(); i++) {
+                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + getIntegers(remove(i)).get(0)));
+                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + getIntegers(remove(i)).get(1)));
+            }
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
         }
