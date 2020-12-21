@@ -25,7 +25,7 @@ public class CombinedNumber {
         }
         List<Integer> combinedNumberList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            List<Integer> integers = getCombinedList(remove(i));
+            List<Integer> integers = getCombinedList(remove(i, list));
             for (Integer integer : integers) {
                 combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
             }
@@ -33,7 +33,7 @@ public class CombinedNumber {
         return combinedNumberList;
     }
 
-    private List<Integer> remove(int index) {
+    private List<Integer> remove(int index, List<Integer> list) {
         List<Integer> src = new ArrayList<>(list);
         src.remove(index);
         return src;
