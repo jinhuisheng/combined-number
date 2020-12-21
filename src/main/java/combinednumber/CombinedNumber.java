@@ -23,11 +23,8 @@ public class CombinedNumber {
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
         }
-        if (list.size() == 2) {
-            List<Integer> combinedNumberList = getIntegers(list);
-            return combinedNumberList.get(0).toString();
-        }
-        return list.get(0).toString();
+        List<Integer> combinedNumberList = getIntegers(list);
+        return combinedNumberList.get(0).toString();
     }
 
     private List<Integer> remove(int index) {
