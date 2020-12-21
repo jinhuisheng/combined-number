@@ -17,8 +17,10 @@ public class CombinedNumber {
         if (list.size() == 3) {
             List<Integer> combinedNumberList = new ArrayList<>();
             for (int i = 0; i < list.size(); i++) {
-                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + getIntegers(remove(i)).get(0)));
-                combinedNumberList.add(Integer.parseInt(list.get(i) + "" + getIntegers(remove(i)).get(1)));
+                List<Integer> integers = getIntegers(remove(i));
+                for (Integer integer : integers) {
+                    combinedNumberList.add(Integer.parseInt(list.get(i) + "" + integer));
+                }
             }
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
