@@ -43,6 +43,9 @@ public class CombinedNumber {
     }
 
     private int combineNumber(List<Integer> list) {
-        return Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining("")));
+        return Integer.parseInt(
+                list.stream()
+                        .mapToInt(Integer::intValue).mapToObj(String::valueOf)
+                        .collect(Collectors.joining("")));
     }
 }
