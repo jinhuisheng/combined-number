@@ -19,4 +19,11 @@ public class CombinedNumberTest {
         assertThat(combinedNumber.toString()).isEqualTo("21");
     }
 
+    @Test
+    void combine_list_with_three_item() {
+        CombinedNumber combinedNumber = new CombinedNumber(Arrays.asList(1, 2, 3));
+        assertThat(combinedNumber.toString()).isEqualTo("321");
+    }
+
+
 }

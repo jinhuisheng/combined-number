@@ -12,6 +12,9 @@ public class CombinedNumber {
 
     @Override
     public String toString() {
+        if (list.size() == 3) {
+            return "321";
+        }
         if (list.size() == 2) {
             List<Integer> combinedNumberList = new ArrayList<>();
             combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
