@@ -16,7 +16,7 @@ public class CombinedNumber {
         if (list.size() == 3) {
             List<Integer> combinedNumberList = new ArrayList<>();
             List<Integer> src = new ArrayList<>(list);
-//            src.remove(0);
+            src.remove(0);
             combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1) + "" + list.get(2)));
             combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(2) + "" + list.get(1)));
             combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
