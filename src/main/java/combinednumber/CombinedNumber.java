@@ -35,10 +35,14 @@ public class CombinedNumber {
 
     private List<Integer> getIntegers(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
-        combinedNumberList.add(Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining(""))));
+        combinedNumberList.add(combineNumber(list));
         Collections.reverse(list);
-        combinedNumberList.add(Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining(""))));
+        combinedNumberList.add(combineNumber(list));
         combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList;
+    }
+
+    private int combineNumber(List<Integer> list) {
+        return Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining("")));
     }
 }
