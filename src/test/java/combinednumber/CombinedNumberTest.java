@@ -25,5 +25,12 @@ public class CombinedNumberTest {
         assertThat(combinedNumber.toString()).isEqualTo("321");
     }
 
+    @Test
+    void combine_list_with_three_item_1() {
+        CombinedNumber combinedNumber = new CombinedNumber(Arrays.asList(5, 50, 56));
+        assertThat(combinedNumber.toString()).isEqualTo("56550");
+    }
+
+
 
 }
