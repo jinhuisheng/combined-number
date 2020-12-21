@@ -14,14 +14,12 @@ public class CombinedNumber {
     public String toString() {
         if (list.size() == 3) {
             List<Integer> combinedNumberList = new ArrayList<>();
-            List<Integer> src = new ArrayList<>(list);
-            src.remove(0);
-            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(src).get(0)));
-            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(src).get(1)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0) + "" + list.get(2)));
-            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(2) + "" + list.get(0)));
-            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + list.get(0) + "" + list.get(1)));
-            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + list.get(1) + "" + list.get(0)));
+            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(remove(0)).get(0)));
+            combinedNumberList.add(Integer.parseInt(list.get(0) + "" + getIntegers(remove(0)).get(1)));
+            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + getIntegers(remove(1)).get(0)));
+            combinedNumberList.add(Integer.parseInt(list.get(1) + "" + getIntegers(remove(1)).get(1)));
+            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + getIntegers(remove(2)).get(0)));
+            combinedNumberList.add(Integer.parseInt(list.get(2) + "" + getIntegers(remove(2)).get(1)));
             combinedNumberList.sort((x, y) -> y - x);
             return combinedNumberList.get(0).toString();
         }
@@ -30,6 +28,12 @@ public class CombinedNumber {
             return combinedNumberList.get(0).toString();
         }
         return list.get(0).toString();
+    }
+
+    private List<Integer> remove(int index) {
+        List<Integer> src = new ArrayList<>(list);
+        src.remove(index);
+        return src;
     }
 
     private List<Integer> getIntegers(List<Integer> list) {
