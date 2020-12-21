@@ -1,6 +1,7 @@
 package combinednumber;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CombinedNumber {
@@ -37,7 +38,8 @@ public class CombinedNumber {
     private List<Integer> getIntegers(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
         combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
-        combinedNumberList.add(Integer.parseInt(list.get(1) + "" + list.get(0)));
+        Collections.reverse(list);
+        combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
         combinedNumberList.sort((x, y) -> y - x);
         return combinedNumberList;
     }
