@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CombinedNumber {
     private List<Integer> list;
@@ -54,9 +53,7 @@ public class CombinedNumber {
     }
 
     private int combineNumber(List<Integer> list) {
-        return Integer.parseInt(list.stream()
-                .mapToInt(Integer::intValue)
-                .mapToObj(String::valueOf)
+        return Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf)
                 .collect(Collectors.joining(""))
         );
     }
