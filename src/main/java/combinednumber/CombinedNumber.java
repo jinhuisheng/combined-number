@@ -3,6 +3,7 @@ package combinednumber;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CombinedNumber {
     private List<Integer> list;
@@ -37,7 +38,7 @@ public class CombinedNumber {
 
     private List<Integer> getIntegers(List<Integer> list) {
         List<Integer> combinedNumberList = new ArrayList<>();
-        combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
+        combinedNumberList.add(Integer.parseInt(list.stream().mapToInt(Integer::intValue).mapToObj(String::valueOf).collect(Collectors.joining(""))));
         Collections.reverse(list);
         combinedNumberList.add(Integer.parseInt(list.get(0) + "" + list.get(1)));
         combinedNumberList.sort((x, y) -> y - x);
