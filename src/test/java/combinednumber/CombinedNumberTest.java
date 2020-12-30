@@ -22,6 +22,9 @@ public class CombinedNumberTest {
     @Test
     void should_combine_three_number() {
         assertThat(CombinedNumber.toString(Arrays.asList("1", "2", "3"))).isEqualTo("321");
+        assertThat(CombinedNumber.toString(Arrays.asList("50", "2", "1", "9"))).isEqualTo("95021");
+        assertThat(CombinedNumber.toString(Arrays.asList("5", "50", "56"))).isEqualTo("56550");
+        assertThat(CombinedNumber.toString(Arrays.asList("420", "42", "423"))).isEqualTo("42423420");
     }
 
 }
