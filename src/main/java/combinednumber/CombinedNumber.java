@@ -1,25 +1,25 @@
 package combinednumber;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class CombinedNumber {
+    private List<Integer> integers;
 
-    public static String toString(List<String> numbers) {
-        List<String> combinedNumberStrings = getCombinedNumberStrings(numbers);
-        return getLargestNumberString(combinedNumberStrings);
+    public CombinedNumber(List<Integer> integers) {
+        this.integers = integers;
     }
 
-    private static String getLargestNumberString(List<String> combinedNumberStrings) {
-        return combinedNumberStrings.stream()
-                .map(Integer::parseInt)
-                .max(Comparator.comparingInt(x -> x))
-                .get()
-                .toString();
+    @Override
+    public String toString() {
+        if (integers.size() < 2) {
+            return integers.get(0).toString();
+        }
+        List<Integer> candidateCombinedNumbers = getCandidateCombinedNumbers();
+        candidateCombinedNumbers.sort((x, y) -> y - x);
+        return candidateCombinedNumbers.get(0).toString();
     }
 
-    private static List<String> getCombinedNumberStrings(List<String> numbers) {
-        return CombinedNumberStringsGenerator.generate(numbers);
+    private List<Integer> getCandidateCombinedNumbers() {
+        return CandidateCombinedNumbersGenerator.generate(integers);
     }
 }
-
